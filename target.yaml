@@ -1,0 +1,50 @@
+name: ti mmwave Series
+variants:
+  - name: xwrl6432x
+    cores:
+      - name: core0
+        type: armv8a
+        core_access_options:
+          !Arm
+            ap: 0x0
+            psel: 0x0
+            debug_base: 0x5CA00000
+            cti_base: 0x5CA01000
+    memory_map:
+      - !Ram
+          range:
+            start: 0x00400000
+            end: 0x004001FF
+          is_boot_memory: false
+          cores:
+            - core0
+      - !Ram
+          range:
+            start: 0x00400200
+            end: 0x00457FFF
+          is_boot_memory: false
+          cores:
+            - core0
+      - !Ram
+          range:
+            start: 0x00458000
+            end: 0x0045FFFF
+          is_boot_memory: false
+          cores:
+            - core0
+      - !Ram
+          range:
+            start: 0x00460000
+            end: 0x0047FFFF
+          is_boot_memory: false
+          cores:
+            - core0
+      - !Ram
+          range:
+            start: 0x60000000
+            end: 0x60067FFF
+          is_boot_memory: false
+          cores:
+            - core0
+    flash_algorithms: []
+flash_algorithms: []
